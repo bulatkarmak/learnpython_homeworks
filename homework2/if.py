@@ -3,13 +3,13 @@
 def choose_your_destiny(age):
     if age < 2:
         raise ValueError(f'Слишком молодой – вряд ли ты сам мог сесть за комп ¯\_(ツ)_/¯')
-    if 2 <= age < 7:
+    if age < 7:
         return 'В этом возрасте тебе самое место в садике'
-    elif 7 <= age < 18:
+    if age < 18:
         return 'О, да ты у нас школьник?'
-    elif 18 <= age < 23:
+    if age < 23:
         return 'Студентота, значит?'
-    elif 23 <= age < 65:
+    if age < 65:
         return 'Добро пожаловать во взрослую жизнь, работяга'
     else:
         return 'Дед, тебя же съели О_о'
@@ -21,7 +21,7 @@ print(function_result)
 # Практика: Сравнение строк
 
 def string_operations(str1, str2):
-    if type(str1) == type('') and type(str2) == type(''):
+    if isinstance(str1, str) and isinstance(str2, str):
         if str1 == str2:
             return 1
         elif len(str1) > len(str2):
