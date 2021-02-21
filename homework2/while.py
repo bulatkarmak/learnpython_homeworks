@@ -23,6 +23,6 @@ def ask_usr():
     while user_answer != 'Выход':
         user_answer = input('Пользователь: ')
         if user_answer in questions_dict:
-            print(f'Программа: {questions_dict[user_answer]}')
+            print(f'Программа: {questions_dict.get(user_answer)}')
 
 ask_usr()

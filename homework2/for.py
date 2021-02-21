@@ -22,11 +22,11 @@ list_with_scores = [
 average_score_school = 0
 
 for score in list_with_scores:
-    average_score_school += sum(score['scores'])
+    average_score_school += sum(score['scores']) / len(score['scores'])
 
-print(f'Средний балл по школе: {average_score_school}.')
+print(f'Средний балл по школе: {average_score_school}')
 
 for score in list_with_scores:
-    average_score_class = sum(score['scores'])
+    average_score_class = sum(score['scores']) / len(score['scores'])
     class_name = score['school_class']
-    print(f'В {class_name} средний балл: {average_score_class}.')
+    print(f'В {class_name} средний балл: {average_score_class}')
