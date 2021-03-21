@@ -1,14 +1,15 @@
 import requests
+from flask import current_app
 
 def weather_by_city(city_name):
     weather_url = 'http://api.worldweatheronline.com/premium/v1/weather.ashx'
     params = {
-        'key': '7d17aedcdeef403098f140951210703',
+        'key': current_app.config['WEATHER_API_KEY'],
         'q': city_name,
         'format': 'json',
         'num_of_days': 1,
         'lang': 'ru',
-    }
+    }   
     try:
         result = requests.get(weather_url, params=params)
         result.raise_for_status()
